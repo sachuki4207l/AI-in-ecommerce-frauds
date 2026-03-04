@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Marketplace Sellers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+    <style>/* small inline tweak for content width */
+        main{margin-top:8px}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="appbar">
+            <div class="brand">
+                <div class="logo">FS</div>
+                <div>
+                    <div class="title">Fraud Monitor</div>
+                    <div class="muted">Marketplace Sellers</div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <input id="search" class="search" placeholder="Search sellers by name or id">
+                <a href="/" class="btn secondary">Refresh</a>
+            </div>
+        </header>
+
+        <main>
+            <div id="seller-list" class="grid">
+                <div class="empty">Loading sellers…</div>
+            </div>
+        </main>
+
+        <footer>
+            Powered by the fraud engine — quick, simple, and readable.
+        </footer>
+    </div>
+
+    <script src="/static/main.js"></script>
+    <script>
+        // initialize list and wire search
+        window.addEventListener('DOMContentLoaded', () => {
+            window.loadSellers('seller-list', 'search');
+        });
+    </script>
+</body>
+
+</html>
